@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D9E48B5-2638-4A8A-BA68-6CF95667EE8F}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>WPF.Common.Styles</RootNamespace>
+    <AssemblyName>WPF.Common.Styles</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Resource\SVGImages\SvgIcons.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Resource Include="Resource\Fonts\SourceHanSansHWTC\SourceHanSansHWTC-Bold.otf" />
+    <Resource Include="Resource\Fonts\SourceHanSansHWTC\SourceHanSansHWTC-Regular.otf" />
+    <Resource Include="Resource\Fonts\SourceHanSansTC\SourceHanSansTC-Medium.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="BorderDict.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ButtonDict.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ComboBoxDict.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataGridDict.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DefaultTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ListViewDict.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResourceDict.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TextBoxDict.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ToolTipDict.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Fonts\SourceHanSansHWTC\LICENSE.txt" />
+    <Resource Include="Resource\Fonts\SourceHanSansTC\LICENSE.txt" />
+    <Content Include="Resource\SVGImages\Dialog\error_alert.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\SVGImages\Dialog\popup_alter icon.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\SVGImages\Dialog\popup_complete icon.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\SVGImages\Dialog\popup_copy icon.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\SVGImages\Dialog\popup_delete icon.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\SVGImages\Dialog\popup_exit icon.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\SVGImages\Dialog\popup_question icon.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\SVGImages\Dialog\popup_update icon.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\SVGImages\Dialog\popup_upload icon.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\SVGImages\Display\dashboard_nodata_accident.svg" />
+    <Content Include="Resource\SVGImages\Display\dashboard_nodata_cctv.svg" />
+    <Content Include="Resource\SVGImages\Equipment\btn_refresh.svg" />
+    <Content Include="Resource\SVGImages\Equipment\sign_green.svg" />
+    <Content Include="Resource\SVGImages\Equipment\sign_red flash.svg" />
+    <Content Include="Resource\SVGImages\Equipment\sign_red.svg" />
+    <Content Include="Resource\SVGImages\Equipment\sign_yellow flash.svg" />
+    <Content Include="Resource\SVGImages\HamburgerBtn\main menu_lengthen.svg" />
+    <Content Include="Resource\SVGImages\HamburgerBtn\main menu_shorten.svg" />
+    <Content Include="Resource\SVGImages\main menu\main menu_bus stop_f.svg" />
+    <Content Include="Resource\SVGImages\main menu\main menu_bus stop_n.svg" />
+    <Content Include="Resource\SVGImages\main menu\main menu_equipment_f.svg" />
+    <Content Include="Resource\SVGImages\main menu\main menu_equipment_n.svg" />
+    <Content Include="Resource\SVGImages\main menu\main menu_instant traffic_n.svg" />
+    <Content Include="Resource\SVGImages\main menu\main menu_map view_f.svg" />
+    <Content Include="Resource\SVGImages\main menu\main menu_map view_n.svg" />
+    <Content Include="Resource\SVGImages\main menu\main menu_news_n.svg" />
+    <Content Include="Resource\SVGImages\main menu\main menu_route_n.svg" />
+    <Content Include="Resource\SVGImages\main menu\main menu_setting_f.svg" />
+    <Content Include="Resource\SVGImages\main menu\main menu_setting_n.svg" />
+    <Content Include="Resource\SVGImages\main menu\main menu_sign_f.svg" />
+    <Content Include="Resource\SVGImages\main menu\main menu_sign_n.svg" />
+    <Content Include="Resource\SVGImages\main menu\main menu_vehicle alert_f.svg" />
+    <Content Include="Resource\SVGImages\main menu\main menu_vehicle alert_n.svg" />
+    <Content Include="Resource\SVGImages\main menu\main menu_vehicle_f.svg" />
+    <Content Include="Resource\SVGImages\main menu\main menu_vehicle_n.svg" />
+    <Content Include="Resource\SVGImages\map\map_accident.svg" />
+    <Content Include="Resource\SVGImages\map\map_bus stop.svg" />
+    <Content Include="Resource\SVGImages\map\map_cctv.svg" />
+    <Content Include="Resource\SVGImages\map\map_construction.svg" />
+    <Content Include="Resource\SVGImages\map\map_full route.svg" />
+    <Content Include="Resource\SVGImages\map\map_full route_dis.svg" />
+    <Content Include="Resource\SVGImages\map\map_new add bus stop sursor.svg" />
+    <Content Include="Resource\SVGImages\map\map_new add bus stop.svg" />
+    <Content Include="Resource\SVGImages\map\map_sign.svg" />
+    <Content Include="Resource\SVGImages\map\map_vehicle.svg" />
+    <Content Include="Resource\SVGImages\navigation\btn_import file.svg" />
+    <Content Include="Resource\SVGImages\navigation\btn_new add icon.svg" />
+    <Content Include="Resource\SVGImages\other\action icon_view.svg" />
+    <Content Include="Resource\SVGImages\other\action_key.svg" />
+    <Content Include="Resource\SVGImages\other\action_lock.svg" />
+    <Content Include="Resource\SVGImages\other\action_play.svg" />
+    <Content Include="Resource\SVGImages\other\action_upload.svg" />
+    <Content Include="Resource\SVGImages\other\attachment_icon.svg" />
+    <Content Include="Resource\SVGImages\other\frame_calendar.svg" />
+    <Content Include="Resource\SVGImages\other\map_new add bus stop.svg" />
+    <Content Include="Resource\SVGImages\other\switch_turn off.svg" />
+    <Content Include="Resource\SVGImages\other\switch_turn on.svg" />
+    <Content Include="Resource\SVGImages\other\tag_caution.svg" />
+    <Content Include="Resource\SVGImages\other\tag_exception.svg" />
+    <Content Include="Resource\SVGImages\other\tag_warning.svg" />
+    <Content Include="Resource\SVGImages\other\tool tip_01.svg" />
+    <Content Include="Resource\SVGImages\other\tool tip_02.svg" />
+    <Content Include="Resource\SVGImages\other\traffic event_list_show map.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_accident.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_add_bus_f.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_add_bus_n.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_all.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_bus stop list.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_bus stop.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_cctv.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_cctv_full screen.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_delete_f.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_delete_f_1.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_edit_f.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_edit_n.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_equipment.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_frame_confirm icon.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_list_daggle.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_list_delete.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_list_edit.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_route info.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_route vehicle list.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_sign.svg" />
+    <Content Include="Resource\SVGImages\side menu\side menu_vehicle.svg" />
+    <Content Include="Resource\SVGImages\top bar\search icon.svg" />
+    <Resource Include="Resource\SVGImages\top bar\taiwan-national-development-council.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WPF.Common.Service\WPF.Common.Service.csproj">
+      <Project>{7a3a7742-ada2-47de-8107-0b0ab9346119}</Project>
+      <Name>WPF.Common.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,174 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WPF.Common.Styles">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/WPF.Common.Styles;component/ResourceDict.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/WPF.Common.Styles;component/DefaultTheme.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <ControlTemplate x:Key="ImageButtonTemplate" TargetType="Button" >
+        <Border CornerRadius="5">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3BACFE" Offset="0"/>
+                    <GradientStop Color="#FF1384D7" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid ShowGridLines="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="14"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="1" Stretch="Uniform" Source="{TemplateBinding Property=Tag}" VerticalAlignment="Center"/>
+                <ContentPresenter Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" SnapsToDevicePixels="True"
+                                              TextElement.FontFamily="{StaticResource SourceHanSansHWTC}"
+                                              TextElement.FontSize="14"/>
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="True">
+                <Setter  Property="Opacity" Value="1"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter  Property="Opacity" Value="0.2"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style TargetType="Button" x:Key="ContentBtn">
+        <Setter Property="Width" Value="30"></Setter>
+        <Setter Property="Height" Value="30"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate >
+                    <Border BorderBrush="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=BorderBrush}"
+                            BorderThickness="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=BorderThickness}">
+                        <Border.Style>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                                <Setter Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Background}"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=IsEnabled}" Value="False">
+                                        <Setter Property="Background" Value="#C8C8C8"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+                        <ContentPresenter Content="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=Content}"></ContentPresenter>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate x:Key="BtnCancelTemplate" TargetType="Button">
+        <Grid Background="Transparent" Grid.Row="0" Grid.Column="1">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="76" />
+            </Grid.ColumnDefinitions>
+            <Path x:Name="Path2" Data="M7,0 L0,7.5 L7,15 M0,7.5 L15,7.5" Stroke="#1384D7" StrokeThickness="2" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="0" Grid.Column="0" />
+            <TextBlock Text="返回上一頁" Grid.Row="0" Grid.Column="1" FontSize="14" Foreground="#1384D7" VerticalAlignment="Center" />
+        </Grid>
+    </ControlTemplate>
+
+    <Style x:Key="ConfirmBtn" TargetType="Button">
+        <Style.Resources>
+            <LinearGradientBrush x:Key="BackgroundColor" StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#3BACFE" Offset="0.0"/>
+                <GradientStop Color="#1384D7" Offset="1.0"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="ClickedBackgroundColor" StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#1F81C9" Offset="0.0"/>
+                <GradientStop Color="#0567B0" Offset="1.0"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="DisableBackgroundColor" StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#99CAE8" Offset="0.0"/>
+            </LinearGradientBrush>
+            <SolidColorBrush x:Key="ForegroundColor" Color="#FFFFFF"></SolidColorBrush>
+            <SolidColorBrush x:Key="ClickedForegroundColor" Color="#FFFFFF"></SolidColorBrush>
+            <SolidColorBrush x:Key="DisableForegroundColor" Color="#FFFFFF"></SolidColorBrush>
+            <SolidColorBrush x:Key="BorderBrushColor" Color="Transparent"></SolidColorBrush>
+            <Thickness x:Key="BorderThicknessValue">0</Thickness>
+        </Style.Resources>
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}"/>
+        <Setter Property="FontFamily" Value="{StaticResource SourceHanSansHWTC}"></Setter>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Grid.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="BorderBrush" Value="{DynamicResource BorderBrushColor}"/>
+                                <Setter Property="BorderThickness" Value="{DynamicResource BorderThicknessValue}"/>
+                                <Setter Property="Background" Value="{DynamicResource BackgroundColor}"/>
+                                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Grid.Resources>
+                        <Border Name="EfcBorder"/>
+                        <Border Name="Btnborder">
+                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"></ContentPresenter>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Mode=Self}}"  Value="true"></Condition>
+                                <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Mode=Self}}" Value="false"></Condition>
+                            </MultiDataTrigger.Conditions>
+                            <Setter  TargetName="EfcBorder" Property="Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect Color="#000000" Opacity="0.2"></DropShadowEffect>
+                                </Setter.Value>
+                            </Setter>
+                        </MultiDataTrigger>
+                        <Trigger Property="Button.IsPressed" Value="True">
+                            <Setter TargetName="Btnborder" Property="Background" Value="{DynamicResource ClickedBackgroundColor}"/>
+                            <Setter Property="Button.Foreground" Value="{DynamicResource ClickedForegroundColor}"/>
+                        </Trigger>
+                        <Trigger Property="Button.IsEnabled" Value="False">
+                            <Setter TargetName="Btnborder" Property="Background" Value="{DynamicResource DisableBackgroundColor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CancelBtn" TargetType="Button" BasedOn="{StaticResource ConfirmBtn}">
+        <Style.Resources>
+            <LinearGradientBrush x:Key="BackgroundColor" StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#FFFFFF" Offset="0.0"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="ClickedBackgroundColor" StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#AAAAAA" Offset="0.0"/>
+            </LinearGradientBrush>
+            <SolidColorBrush x:Key="ForegroundColor" Color="#AAAAAA"></SolidColorBrush>
+            <SolidColorBrush x:Key="BorderBrushColor" Color="#AAAAAA"></SolidColorBrush>
+            <Thickness x:Key="BorderThicknessValue">1</Thickness>
+        </Style.Resources>
+    </Style>
+
+    <Style x:Key="DeleteBtn" TargetType="Button" BasedOn="{StaticResource ConfirmBtn}">
+        <Style.Resources>
+            <LinearGradientBrush x:Key="BackgroundColor" StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#F56464" Offset="0.0"/>
+                <GradientStop Color="#DE3B3B" Offset="1.0"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="ClickedBackgroundColor" StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#DC534F" Offset="0.0"/>
+                <GradientStop Color="#B8263B" Offset="1.0"/>
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="DisableBackgroundColor" StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#DB8DA0" Offset="0.0"/>
+            </LinearGradientBrush>
+        </Style.Resources>
+    </Style>
+
+</ResourceDictionary>
