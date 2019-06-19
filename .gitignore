@@ -107,3 +107,14 @@ WPF.Common.Demo/bin/Debug/Svg.xml
 WPF.Common.Demo/bin/Debug/Newtonsoft.Json.xml
 WPF.Common.Demo/bin/Debug/MaterialDesignThemes.Wpf.xml
 WPF.Common.Demo/bin/Debug/MahApps.Metro.xml
+/WPF.Common.Ctrls/obj
+/WPF.Common.Ctrls/bin
+/WPF.Common.Demo/obj
+/WPF.Common.Demo/bin
+/WPF.Common.Service/obj
+/WPF.Common.Service/bin
+/WPF.Common.Styles/obj
+/WPF.Common.Styles/bin
+/WPF.Common.Styles/Resource/Fonts
+/packages
+/.vs
